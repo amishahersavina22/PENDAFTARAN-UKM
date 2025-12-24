@@ -1,0 +1,29 @@
+.banner {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 1100px; /* batas maksimum agar tidak melebar melebihi halaman */
+  height: 180px;
+  object-fit: cover; /* biar gambar tidak gepeng */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.kegiatan {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  flex-wrap: wrap; /* biar bisa turun ke bawah kalau layar kecil */
+}
+
+.kegiatan img {
+  width: 355px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
