@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>UKM {{ strtoupper($ukm) }}</title>
   <link rel="stylesheet" href="{{ asset('css/olahukm.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -15,7 +17,7 @@
         <nav>
             <a href="{{ route('news') }}">NEWS</a>
             <a href="{{ route('home') }}#daftar">UKM</a>
-            <a href="{{ route('register') }}">REGISTER</a>
+            <a href="{{ route('pendaftaran.form') }}">REGISTER</a>
             <a href="{{ route('home') }}">HOME</a>
         </nav>
     </header>
@@ -83,9 +85,9 @@
 
     <footer>
         <div class="footer">
-            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#"><i class="far fa-envelope"></i> Email</a>
-            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.instagram.com/unida.gontor/"><i class="fa-brands fa-instagram"></i>unida gontor.id</a>
+        <a href="https://www.youtube.com/results?search_query=unida+gontor"><i class="fa-brands fa-youtube"></i>unidagontor</a>
+        <a href="https://www.facebook.com/profile.php?id=100067191552530&locale=id_ID"><i class="fa-brands fa-facebook"></i>unidagontor</a>
         </div>
     </footer>
 </body>

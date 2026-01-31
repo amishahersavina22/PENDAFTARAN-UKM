@@ -40,7 +40,7 @@
                 @foreach($anggota as $a)
                 <tr data-ukm="{{ $a->ukm }}">
                     <td>
-                        <img src="{{ asset('storage/'.$a->foto) }}" alt="foto" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #dcabab;">
+                        <img src="{{ asset($a->foto) }}" alt="foto"style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #dcabab;">
                     </td>
                     <td style="font-weight: bold;">{{ $a->nama }}</td>
                     <td>{{ $a->nim }}</td>
@@ -48,7 +48,7 @@
                     <td>
                         <form action="{{ route('admin.destroyPendaftar', $a->id) }}" method="POST" onsubmit="return confirm('Yakin hapus?')">
                             @csrf @method('DELETE')
-                            <button type="submit" style="background: none; border: none; color: #e74c3c; cursor: pointer; font-size: 18px;">🗑️</button>
+                            <button type="submit" style="background: none; border: none; color: #e74c3c; cursor: pointer; font-size: 18px;">Hapus</button>
                         </form>
                     </td>
                 </tr>

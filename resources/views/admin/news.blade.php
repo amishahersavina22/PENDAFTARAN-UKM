@@ -25,7 +25,7 @@
             <input type="hidden" name="tanggal" value="{{ date('Y-m-d') }}">
 
             <button type="submit" class="btn-submit" style="margin-top: 20px;">
-                🚀 Simpan Berita
+                 Simpan Berita
             </button>
         </form>
     </div>

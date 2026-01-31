@@ -48,7 +48,7 @@
         </div>
 
         <button type="submit" class="btn-submit">
-            🚀 UPLOAD / UPDATE DATA FOTO
+             UPLOAD / UPDATE DATA FOTO
         </button>
     </form>
 </div>
@@ -107,7 +107,7 @@
         @csrf
         @method('DELETE')
         <button type="submit" style="background: #ff5f5f; color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-size: 13px;">
-            🗑️ Hapus
+             Hapus
         </button>
     </form>
 </td>

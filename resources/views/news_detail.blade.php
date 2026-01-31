@@ -1,66 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <title>{{ $berita->judul }} - Detail Berita</title>
+    <link rel="stylesheet" href="{{ asset('css/News.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Home</title>
+    <style>
+        .container-detail { width: 80%; margin: 10px auto; line-height: 1.6; }
+        .img-detail { width: 50%; max-height: 230px; object-fit: cover; border-radius: 8px; }
+        .content { margin-top: 10px; white-space: pre-line; } /* Menjaga spasi paragraf */
+    </style>
 </head>
-<header>
-    <img class="logo" src="{{ asset('images/UNIDA.png') }}" alt="">
-    <h4> UNIVERSITAS DARUSSALAM GONTOR</h4>
-    <nav>
-    <a href="{{ route('news') }}">NEWS</a>
-    <a href="{{ route('home') }}#daftar">UKM</a>
-    <a href="{{ route('pendaftaran.form') }}">REGISTER</a>
-    <a href="{{ route('home') }}">HOME</a>
-
-    </nav>
-</header>
-
 <body>
-    <div class="container">
-        <img class="logo1" src="{{ asset('images/logo.jpg') }}" alt="">
-        <h2>UNIT KEGIATAN MAHASISWA</h2>
-        <h2>UNIVERSITAS DARUSSALAM GONTOR KAMPUS PUTRI</h2>
+    <header>
+        <img class="logo" src="{{ asset('images/UNIDA.png') }}" alt="Logo Unida">
+        <h4>UNIVERSITAS DARUSSALAM GONTOR</h4>
+        <nav>
+            <a href="{{ route('news') }}">NEWS</a>
+            <a href="{{ route('home') }}#daftar">UKM</a>
+            <a href="{{ route('pendaftaran.form') }}">REGISTER</a>
+            <a href="{{ route('home') }}">HOME</a>
+        </nav>
+    </header>
+
+    <div class="container-detail">
+        <a href="{{ route('news') }}" style="text-decoration: none; color: #777;"><i class="fa fa-arrow-left"></i> Kembali ke Berita</a>
+
+        <h1>{{ $berita->judul }}</h1>
+        <p class="tanggal">{{ \Carbon\Carbon::parse($berita->tanggal)->format('d F Y') }}</p>
+
+        <img src="{{ asset('storage/' . $berita->gambar) }}" class="img-detail" alt="{{ $berita->judul }}">
+
         <div class="content">
-            <h4>TERDAPAT BERBAGAI KEGIATAN YANG DAPAT KAMU IKUTI</h4>
+            {!! nl2br(e($berita->isi)) !!}
         </div>
-        <div class="daftar" id="daftar">
-    <div class="ukm-card">
-        <a href="{{ route('kategori.fikir') }}">
-            <button class="daftarcontent" style="background-image: url('images/fikir.jpg');"></button>
-        </a>
-        <h5>OLAH FIKIR</h5>
-        <p class="jumlah-pendaftar">{{ $countFikir }} Anggota </p>
     </div>
 
-    <div class="ukm-card">
-        <a href="{{ route('kategori.raga') }}">
-            <button class="daftarcontent" style="background-image: url('images/raga.jpg');"></button>
-        </a>
-        <h5>OLAH RAGA</h5>
-        <p class="jumlah-pendaftar">{{ $countRaga }} Anggota </p> </div>
-
-    <div class="ukm-card">
-        <a href="{{ route('kategori.rasa') }}">
-            <button class="daftarcontent" style="background-image: url('images/seni.png');"></button>
-        </a>
-        <h5>OLAH RASA</h5>
-        <p class="jumlah-pendaftar">{{ $countRasa }} Anggota </p> </div>
-
-    <div class="ukm-card">
-        <a href="{{ route('kategori.dzikir') }}">
-            <button class="daftarcontent" style="background-image: url('images/dzikir.jpg');"></button>
-        </a>
-        <h5>OLAH DZIKIR</h5>
-        <p class="jumlah-pendaftar">{{ $countDzikir }} Anggota </p> </div>
-</div>
-    </div>
-</body>
-<footer>
+   <footer>
     <div class="footer-container">
         <div class="footer-section">
             <img src="{{ asset('images/UNIDA.png') }}" alt="Logo UNIDA" class="footer-logo">
@@ -72,7 +48,7 @@
             <h4>Navigasi</h4>
             <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{ route('pendaftaran.form') }}">REGISTER</a></li>
+                <li><a href="{{ route('pendaftaran.form') }}">Pendaftaran</a></li>
                 <li><a href="{{ route('news') }}">Berita UKM</a></li>
                 <li><a href="#">Tentang Kami</a></li>
             </ul>
@@ -103,5 +79,5 @@
         <p>&copy; {{ date('Y') }} Universitas Darussalam Gontor. All Rights Reserved.</p>
     </div>
 </footer>
-
+</body>
 </html>

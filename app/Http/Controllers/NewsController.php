@@ -53,4 +53,13 @@ class NewsController extends Controller
 
         return view('admin.news'); // Mengarah ke file view admin
     }
+
+            public function show($id)
+        {
+            // GANTI 'Berita' menjadi 'News'
+            $berita = \App\Models\News::findOrFail($id); 
+
+            // Kirim data ke view detail
+            return view('news_detail', compact('berita'));
+        }
 }
